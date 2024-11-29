@@ -1,14 +1,37 @@
 ﻿using UnityEngine;
 
-public class TomatoPickup : MonoBehaviour
+public class ObjectThrow : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public float throwForce = 10f;  // قوة الرمي
+    public Transform targetBox;  // المكان الذي سيتم رمي العنصر فيه (مثل Box)
+    private Rigidbody rb;  // الـ Rigidbody الخاص بالعناصر
+
+    void Start()
     {
-        if (other.CompareTag("Hand")) // تأكد من أن الأيدي تحتوي على Tag باسم "Hand"
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        // الرمي عند الضغط على زر (مثلاً، G)
+        if (Input.GetKeyDown(KeyCode.G) && rb != null)
         {
-            // أضف الطماطم إلى المخزون أو قم بإخفائها
-            Destroy(gameObject); // يمكنك استبدالها بإضافة الطماطم للمخزون
-            Debug.Log("تم جمع الطماطم!");
+            ThrowObject();
         }
+    }
+
+    void ThrowObject()
+    {
+        // تعطيل الإمساك بالعناصر
+        rb.isKinematic = false;  // ليكون العنصر تفاعلي مع الفيزياء
+
+        // حساب الاتجاه الصحيح نحو الـ Box (المربع)
+        Vector3 directionToTarget = targetBox.position - transform.position;
+
+        // جعل الاتجاه متوازن وتحريك العنصر في الاتجاه الصحيح
+        Vector3 throwDirection = directionToTarget.normalized;  // الاتجاه المطلوب
+
+        // رمي العنصر بقوة في الاتجاه المحسوب
+        rb.AddForce(throwDirection * throwForce, ForceMode.Impulse);
     }
 }

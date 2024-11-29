@@ -9,7 +9,7 @@
                     "name": "TriggerPress",
                     "type": "Button",
                     "id": "578a0cd6-f388-4fa3-92f3-c09338bdf6fc",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -770,7 +770,7 @@
                     "name": "TriggerPress",
                     "type": "Button",
                     "id": "bc163c5e-01a5-48ae-83b3-87e68f24f888",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -1647,7 +1647,7 @@
                     "name": "Tracked",
                     "type": "Button",
                     "id": "2a7ee830-cd9a-420a-84fd-c4ac3085124a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false

@@ -2,6 +2,7 @@
   "dependencies": {
     "com.unity.collab-proxy": "2.5.2",
     "com.unity.feature.development": "1.0.1",
+    "com.unity.inputsystem": "1.11.0",
     "com.unity.render-pipelines.high-definition": "14.0.8",
     "com.unity.render-pipelines.high-definition-config": "14.0.8",
     "com.unity.scriptablebuildpipeline": "1.21.25",
